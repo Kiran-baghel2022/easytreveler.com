@@ -11,13 +11,9 @@ export class ApiService {
 
   }
 
-
-  private itemsUrl = 'http://localhost:8082/items';
-  private vendersUrl = 'http://localhost:8082/venders';
-  private showItemFormUrl = 'http://localhost:8082/itemsdetails';
-  private generateTokenUrl = 'http://localhost:8082/authenticate';
-  private detinationUrl = 'https://travel-advisor.p.rapidapi.com/attractions/get-details?location_id=297628&currency=USD&lang=en_US';
-
+  private location_id ='297628';
+  private detinationUrl = "https://travel-advisor.p.rapidapi.com/attractions/get-details?location_id="+this.location_id+"&currency=USD&lang=en_US";
+  //private detinationUr2 = 'https://travel-advisor.p.rapidapi.com/attractions/get-details?location_id=297628&currency=USD&lang=en_US';
   
   getDestinationDetails(){
     //let auth_token = localStorage.getItem("token");
@@ -29,23 +25,7 @@ export class ApiService {
     return this.http.get(this.detinationUrl,requestOptions);
   }
 
-  public generateToken(request: any) {
-    this.http.post(this.generateTokenUrl, request, { responseType: 'text' as 'json' });
-  }
 
-  getItems() {
-    
-    return this.http.get(this.itemsUrl);
-  }
-  getVenders() { 
-    // let auth_token = localStorage.getItem("token");
-    // const headers = new HttpHeaders({'Content-Type': 'application/json','Authorization': `Bearer ${auth_token}`});
-    //  const requestOptions = { headers: headers }
-    //  console.log('checking headers : ',requestOptions.headers.get('Authorization'));
-      return this.http.get(this.vendersUrl);
-    }
-    
-  showAddItemForm(){
-      return this.http.get(this.showItemFormUrl);
-    }
+  
+ 
 }

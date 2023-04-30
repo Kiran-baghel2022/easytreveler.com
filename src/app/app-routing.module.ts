@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { SubskartComponent } from './subskart/subskart.component';
-import { VenderComponent } from './vender/vender.component';
-import { ItemComponent } from './item/item.component';
-import { AdminComponent } from './admin/admin/admin.component';
-import { ItemlistComponent } from './itemlist/itemlist.component';
-import { VendoritemselectionComponent } from './vendoritemselection/vendoritemselection.component';
-import { ShowdestinationComponent } from './showdestination/showdestination.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ShowdestinationComponent } from './pages/showdestination/showdestination.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { DestinationdetailsComponent } from './pages/destinationdetails/destinationdetails.component';
+
 
 
 
@@ -16,15 +13,10 @@ const routes: Routes = [
   // { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'subskart', component: SubskartComponent },
-  { path: 'vender', component: VenderComponent },
-  { path: 'additem', component: ItemComponent },
-  { path: 'item', component: ItemlistComponent },
-  { path: 'vendoritemselection', component: VendoritemselectionComponent },
   { path: 'admin', component: AdminComponent },
   // { path: '**', component: LoginComponent },
-  { path: 'showdestination', component: ShowdestinationComponent }
-  
+  { path: 'showdestination', component: ShowdestinationComponent },
+  { path: 'destinationdetails', component: DestinationdetailsComponent }
 ];
 
 @NgModule({
